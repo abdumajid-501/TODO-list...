@@ -27,21 +27,24 @@
         </div>
 
 
-    <div class="overlay">
+    <div class="overlay hidden">
         <div class="modal">
             <button class="modal-btn" type="button">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
             <form class="modal-form">
-                <input class="modal-input" 
+                <input
+                    class="modal-input" 
                     type="text" 
                     placeholder="Todo text..." 
                     name="todo-text"            
                     autocomplete="off"
                     autofocus 
                     required
-                ></form>
+                >
+                <button class="btn" type="submit"><i class="fa-solid fa-repeat"></i></button>
+            </form>
         </div>
     </div>
     <script type="module" src="./js/main.js"></script>

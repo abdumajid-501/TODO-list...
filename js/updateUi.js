@@ -1,4 +1,8 @@
 const listEl = document.querySelector(".todos");
+const overlayEl = document.querySelector(".overlay")
+const modalForm = document.querySelector(".modal-form")
+const modalBtn = document.querySelector(".modal-btn")
+const modalInputEl = document.querySelector(".modal-input")
 
 export const createUi = (todos) => {
   listEl.innerHTML = '';
@@ -32,6 +36,8 @@ export const createUi = (todos) => {
       
       editBtn.addEventListener("click", (e) => {
           e.stopPropagation();
+          overlayEl.classList.remove("hidden")
+          editModalFn(todos, id);
       })
       
       divEl.classList.add("flex") 
@@ -54,3 +60,33 @@ export const createUi = (todos) => {
     listEl.append(li);
   });
 };
+
+function hiddenModal() {
+    overlayEl.classList.add("hidden")
+}
+
+
+overlayEl.addEventListener("click", (e) => {
+    if (e.target.classList.contains("overlay")) {
+        hiddenModal();
+    }
+})
+
+modalBtn.addEventListener("click", hiddenModal)
+
+function editModalFn(todos, id) {
+    const activeTodo = todos.find((todo) => todo.id === id)
+    modalInputEl.value = activeTodo.text;
+
+
+    modalForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+    
+        const newTodos = todos.map((todo) => {
+        return todo.id === id ? {...todo, text: modalInputEl.value} : {todo}
+        })
+        localStorage.setItem("todos", JSON.stringify(newTodos))
+        createUi(newTodos)
+        hiddenModal();
+})
+}

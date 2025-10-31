@@ -34,6 +34,10 @@ input {
     font-family: inherit;
     font-size: inherit;
     background-color: transparent;
+    border: 1px solid var(--primary);
+    border-radius: 0.7rem;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fbc2eb);
+    padding: 0.4rem 0.8rem;  
 }
 
 button {
@@ -46,10 +50,6 @@ button {
 }
 .input {
     width: 100%;
-    border: 1px solid var(--primary);
-    border-radius: 0.7rem;
-    padding: 0.4rem 0.8rem;
-    background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fbc2eb);  
 }
 
 .btn {
@@ -105,4 +105,35 @@ button {
 .flex {
     display: flex;
     gap: 0.4rem;
+}
+
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6); 
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    background: #fff;
+    padding: 2rem 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.modal-btn {
+    align-self: end;
+}
+
+.hidden {
+    display: none;
 }
