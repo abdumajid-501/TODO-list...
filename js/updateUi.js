@@ -83,8 +83,7 @@ function editModalFn(todos, id) {
     e.preventDefault()
     
         const newTodos = todos.map((todo) => {
-        return todo.id === id ? {...todo, text: modalInputEl.value} : {todo}
-        })
+return todo.id === id ? { ...todo, text: modalInputEl.value } : todo;        })
         localStorage.setItem("todos", JSON.stringify(newTodos))
         createUi(newTodos)
         hiddenModal();
