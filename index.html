@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO List...</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+        <div class="container">
+            <form class="form">
+                <input class="input" 
+                    type="text" 
+                    placeholder="Todo text..." 
+                    name="todo-text"            
+                    autocomplete="off"
+                    autofocus 
+                    required
+                >
+                <button class="btn" type="submit">ADD</button>
+            </form>
+        </div>
+
+        <div class="container">
+            <ul class="todos"></ul>
+        </div>
+
+
+    <div class="overlay">
+        <div class="modal">
+            <button class="modal-btn" type="button">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <form class="modal-form">
+                <input class="modal-input" 
+                    type="text" 
+                    placeholder="Todo text..." 
+                    name="todo-text"            
+                    autocomplete="off"
+                    autofocus 
+                    required
+                ></form>
+        </div>
+    </div>
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
